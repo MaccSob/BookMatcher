@@ -17,6 +17,7 @@ class MoodInterpretation(BaseModel):
 class BookRecommendation(BaseModel):
     title: str
     reasoning: str
+    author: str
 
 class RecommendationList(BaseModel):
     recommendations: list[BookRecommendation]
@@ -27,7 +28,7 @@ def rank_and_explain(candidates, mood_text):
         desc = c['description']
         if desc is None:
             desc = "No description available"
-        line = f"- {c['title']}: {desc[:200]}"
+        line = f"- {c['title']} by {c['author']}: {desc[:200]}" 
         candidate_lines.append(line)
     
     candidates_text = "\n".join(candidate_lines)

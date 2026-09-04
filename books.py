@@ -40,6 +40,7 @@ def search_books(query, limit=5):
     for doc in top_docs:
         work_key = doc.get('key')
         dork = get_book_details(work_key)
+        dork['author'] = doc.get('author_name')
         dork['subjects'] = clean_subjects(dork['subjects'])
         results.append(dork)
     return results
