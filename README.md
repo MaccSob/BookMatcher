@@ -15,7 +15,7 @@ Asking an LLM directly for book recommendations works, but it's prone to halluci
 5. **Rank & explain** — the LLM reviews the candidates' real descriptions and picks the best 3-5 matches for the original mood, with a short reasoning for each.
 6. **Serve** — the whole pipeline is exposed as a REST API (FastAPI), with a small HTML page to try it out.
 
-## Status
+## Statusr
 
 **Working end-to-end**, including a REST API and a minimal test frontend.
 
